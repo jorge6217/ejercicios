@@ -1,14 +1,11 @@
-// Ejercicio 4
+// Ejercicio 5
 // Jorge Luis Lopez 
 // 221038
-// 4 de Octubre del 2022
+// 23-10-2022
 
 package juego;
-
 import java.util.Scanner;
-
 public class driverProgram {
-
 	public static void main(String[] args) {
 		// Se genera un scanner 
 		Scanner sc = new Scanner(System.in);
@@ -19,14 +16,17 @@ public class driverProgram {
 		// Arreglos items Heroe
 		String[ ] itemsGuerrero = {"item 1", "item 2"};
 		String[ ] itemsExplorador = {"item 3", "item 4", "item 5"};
+		String[ ] itemsCazador = {"item 6", "item 7", "item 7"};
 		
 		// Arreglos enemigo
 		String[ ] itemsEnemyNormal = {"item 1", "item 2"};
 		String[ ] itemsEnemyJefe = {"item 3", "item 4", "item 5"};
+		String[ ] itemsRaidBoss = {"item 6", "item 7", "item 7"};
+		
 		// Inicia el programa
 		inicioJuego();
 		options = sc.nextInt();
-		while(options != 2) {
+		while(options != 3) {
 			if(options == 1) {
 				// El usuario escoje el rol del combatiente heroe
 				menuRol();
@@ -70,23 +70,26 @@ public class driverProgram {
 			}
 		}
 	}
-	// Se inicia partida o termina el programa
+	// Se inicia partida o termina el programa (Se agrego al menu el modo raid)
 	public static void inicioJuego() {
-		System.out.println(" Bienvenido al juego de Batalla ");
-		System.out.println(" 1. Iniciar partida ");
-		System.out.println(" 2. Salir ");
+		System.out.println(" Bienvenido al juego de Batalla Version 2 ");
+		System.out.println(" 1. Iniciar partida normal ");
+		System.out.println(" 2. Jugar modo Raid");
+		System.out.println(" 3. Salir ");
 	}
-	// menu para escojer el tipo de heroe
+	// menu para escojer el tipo de heroe (Se agrego el heroe cazador)
 	public static void menuRol() {
 		System.out.println(" Escoje tu heroe. ");
 		System.out.println(" 1. Guerrero ");
 		System.out.println(" 2. Explorador ");
+		System.out.println(" 3. Cazador ");
 	}
 	public static void menuEnemy() {
 		// menu para escojer el tipo de enemigo
 		System.out.println(" Escoje tu enemigo. ");
 		System.out.println(" 1. Clàsico ");
 		System.out.println(" 2. Jefe ");
+		System.out.println(" 3. Raid Boss ");
 	}
 	// menu turno heroe
 	public static void turnoHeroe() {
@@ -95,6 +98,14 @@ public class driverProgram {
 		System.out.println("2. Utilizar item o habilidad especial");
 		System.out.println("3. Saltar turno");
 	}
+	//menu especial para el heroe cazador
+	public static void turnoHeroeCazador() {
+		System.out.println("Turno Heroe");
+		System.out.println("1. Atacar");
+		System.out.println("2. Utilizar item o habilidad especial");
+		System.out.println("3. Pedir ayuda a mascota");
+		System.out.println("4. Saltar turno");
+	}	
 	// menu turno enemigo
 	public static void turnoEnemigo() {
 		System.out.println("Turno Enemigo");
